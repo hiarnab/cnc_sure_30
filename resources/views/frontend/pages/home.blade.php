@@ -1,6 +1,12 @@
 @extends('layout.frontend.app')
+@push('styles')
+    {{-- <link rel="stylesheet" href="{{ asset('resourcescss/home.css') }}"> --}}
+    @vite(['resources/css/home.css'])
+    
+@endpush
 
 @section('content')
+<div class="hero_section">
     <form class="mb-5">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -21,6 +27,7 @@
 <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">
   Launch demo modal
 </button>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
