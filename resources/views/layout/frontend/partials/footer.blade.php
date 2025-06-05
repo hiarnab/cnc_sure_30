@@ -71,7 +71,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="copyright_text">
-						<p>Copyright &copy; 2025 All rights reserved.</p>
+						<p>Copyright &copy; 2025 Career & Courses. All rights reserved.</p>
 					</div>
 				</div>
 			</div>
