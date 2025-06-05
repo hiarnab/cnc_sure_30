@@ -16,18 +16,12 @@
                     <h2 class=" fw-bold font-size_title">SURE 30</h2>
                     <h4 class=" hero_title">Become a Future WBCS Officer</h4>
 
-                      @if (session('success'))
+                    @if (session('success'))
                         <div class="alert alert-success">
                             {{ session('success') }}
                         </div>
                     @endif
 
-                    @if (session('error'))
-                        <div class="alert alert-danger">
-                            {{ session('error') }}
-                        </div>
-                    @endif
-                    
                     <p class=" text-color fs-5">
                         A 360° WBCS preparation - residential coaching, expert faculty, and a disciplined campus life
                         developed to help you become a future civil servant.
