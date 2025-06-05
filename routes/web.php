@@ -18,6 +18,10 @@ Route::middleware('admin')->group(function(){
 
 Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
 
+// admission enquiry
+Route::get('/admission-enquiry',[AdmissionEnquiryController::class,'index'])->name('list.admission');
+// admission enquiry
+
 });
 
 

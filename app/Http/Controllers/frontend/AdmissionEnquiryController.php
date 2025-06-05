@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 class AdmissionEnquiryController extends Controller
 {
+
+     public function index()
+    {
+        $admission_enquiry = AdmissionEnquiry::all();
+        // return $admission_enquiry;
+        return view('admin.admission-enquiry',compact('admission_enquiry'));
+    }
     public function store(Request $request)
     {
         $validate = $request->validate([
