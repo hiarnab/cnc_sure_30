@@ -30,6 +30,7 @@ class AdmissionEnquiryController extends Controller
         $entity->email = $request->email;
         $entity->pincode = $request->pincode;
         $entity->save();
-        return redirect()->back()->with('success','Enquiry has been successfully we will get back you soon');
+        flash ('Enquiry has been successfully, we will get back you soon!', 'success');
+        return redirect()->back();
     }
 }
