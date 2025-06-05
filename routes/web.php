@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\LoginController;
+use App\Http\Controllers\frontend\AdmissionEnquiryController;
 
 Route::get('/', function () {
     return view('frontend.pages.home');
@@ -20,7 +21,11 @@ Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard'
 });
 
 
-
+// frontend
+// admission enquiry
+Route::post('/admission-enquiry/submit',[AdmissionEnquiryController::class, 'store'])->name('admission.store');
+// admission enquiry
+// frontend
 
 // login
 Route::get('/login',[LoginController::class,'login'])->name('login');
