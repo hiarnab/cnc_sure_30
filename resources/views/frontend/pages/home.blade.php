@@ -15,6 +15,19 @@
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <h2 class=" fw-bold font-size_title">SURE 30</h2>
                     <h4 class=" hero_title">Become a Future WBCS Officer</h4>
+
+                      @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+                    @if (session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+                    
                     <p class=" text-color fs-5">
                         A 360° WBCS preparation - residential coaching, expert faculty, and a disciplined campus life
                         developed to help you become a future civil servant.
@@ -33,31 +46,46 @@
                 <!-- Form -->
                 <div class="col-lg-4">
                     <div class="registration-form form_sec">
-                        <form>
+                        <form action="{{ route('admission.store') }}" method="POST">
+                            @csrf
                             <h2 class=" text-center fw-bold ">Admission Enquiry</h2>
                             <h5>Get up to 50% scholarship*</h5>
 
                             <div class="form-group">
-                                <input type="text" class="form-control item" id="fullName" name="fullName"
-                                    placeholder="Full Name" required>
+                                <input type="text" class="form-control item @error('name') is-invalid @enderror"
+                                    id="fullName" name="name" placeholder="Full Name" value="{{ old('name') }}">
+                                @error('name')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group">
-                                <input type="tel" class="form-control item" id="mobileNumber" name="mobileNumber"
-                                    placeholder="Mobile Number" required>
+                                <input type="tel" class="form-control item @error('phone') is-invalid @enderror"
+                                    id="mobileNumber" name="phone" placeholder="Mobile Number"
+                                    value="{{ old('phone') }}">
+                                @error('phone')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control item" id="emailId" name="emailId"
-                                    placeholder="Email ID" required>
+                                <input type="email" class="form-control item @error('email') is-invalid @enderror"
+                                    id="emailId" name="email" placeholder="Email ID" value="{{ old('email') }}">
+                                @error('email')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control item" id="pincode" name="pincode"
-                                    placeholder="Area Pincode" required>
+                                <input type="text" class="form-control item @error('pincode') is-invalid @enderror"
+                                    id="pincode" name="pincode" placeholder="Area Pincode" value="{{ old('pincode') }}">
+                                @error('pincode')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <div class="form-group d-flex justify-content-center align-items-center flex-column">
-                                <button type="button" class="btn btn-block create-account w-75">Apply Now</button>
+                                <button type="submit" class="btn btn-block create-account w-75">Apply Now</button>
                                 <p style="font-size: 0.7rem;" class=" text-center mt-2" style="color:gray">By clicking
-                                    submit button you are agreeing to <a href="https://careerandcourses.com/legal/privacy-policy"> Privacy Policy</a></p>
+                                    submit button you are agreeing to <a
+                                        href="https://careerandcourses.com/legal/privacy-policy"> Privacy Policy</a></p>
                             </div>
                         </form>
                     </div>
@@ -228,7 +256,7 @@
                                         placeholder="Enter area pincode" required>
                                 </div>
                                 <button type="submit" class="btn btn-primary w-100">Submit</button>
-                                
+
                             </form>
                         </div>
 
@@ -252,7 +280,7 @@
                     <div class="card h-100 shadow-sm">
                         <div class="card-body d-flex">
                             <div class="d-flex align-items-center mb-2 me-2">
-                               <i class="fa-solid fa-hotel icon"></i>
+                                <i class="fa-solid fa-hotel icon"></i>
                             </div>
                             <div>
                                 <h5 class="card-title">Safe & Secure</h5>
@@ -269,7 +297,7 @@
                             </div>
                             <div>
                                 <h5 class="card-title">Health & Nutrition</h5>
-                                <p class="card-text">Nutritious Meals and Healthcare</p> 
+                                <p class="card-text">Nutritious Meals and Healthcare</p>
                             </div>
                         </div>
                     </div>
