@@ -1,5 +1,5 @@
 <footer class="deneb_footer">
-	<div class="widget_wrapper" style="background-image: url(http://demo.tortoizthemes.com/deneb-html/deneb-ltr/assets/images/footer_bg.png);">
+	{{-- <div class="widget_wrapper" style="background-image: url(http://demo.tortoizthemes.com/deneb-html/deneb-ltr/assets/images/footer_bg.png);">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4 col-md-6 col-12">
@@ -65,7 +65,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 	<div class="copyright_area">
 		<div class="container">
 			<div class="row">

@@ -9,19 +9,22 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="mainNavbar">
+            <div class="collapse navbar-collapse " id="mainNavbar">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link active" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                        <a class="nav-link" href="{{ url('/#about') }}">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
+                        <a class="nav-link" href="{{url('/#why') }}">Why Choose Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="{{url('/#review')  }}">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  data-bs-toggle="modal" data-bs-target="#enquiryModal01">Contact</a>
                     </li>
                 </ul>
             </div>

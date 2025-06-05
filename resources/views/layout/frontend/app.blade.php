@@ -16,7 +16,7 @@
 
     <!-- Styles / Scripts -->
 
-    @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/css/footer.css'])
+    @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/css/footer.css' ,'resources/css/header.css'])
  
     @stack('styles')
 
