@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    <header class="fixed-top" style="background-color: #000066;">
+    <header class="fixed-top" style="background-color: #fff">
         @include('layout.frontend.partials.header')
     </header>
     <main>

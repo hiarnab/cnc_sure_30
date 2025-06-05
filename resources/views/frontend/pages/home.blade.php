@@ -8,50 +8,56 @@
 @endpush
 
 @section('content')
-    <section class=" hero_section overflow-hidden  ">
-        <div class="container">
+    <section class=" hero_section ">
+        <div class="container ">
             <div class="row align-items-center">
                 <!-- Left content -->
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <h2 class="text-white fw-bold font-size_title">SURE 30</h2>
-                    <h4 class=" text-color fw-semibold">Become a Future WBCS Officer</h4>
-                    <p class=" text-color">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class=" fw-bold font-size_title">SURE 30</h2>
+                    <h4 class=" hero_title">Become a Future WBCS Officer</h4>
+                    <p class=" text-color fs-5">
                         A 360° WBCS preparation - residential coaching, expert faculty, and a disciplined campus life
                         developed to help you become a future civil servant.
                     </p>
-                    <p class="fw-bold text-danger">🏆 Limited Seats Available</p>
-                    <button class="btn btn-outline-primary">Free Counselling</button>
-                </div>
-                <div class="col-lg-4 d-none d-lg-block  ">
+                    {{-- <p class="fw-bold text-danger">🏆 Limited Seats Available</p> --}}
 
-                    <img src="{{ asset('assect/image/hero_img.webp') }}" class="img-fluid hero-img" alt="Hero Image">
+                    <button class="btn counselling_btn my-3 ">Free Counselling </button>
+
+
+                </div>
+                <div class="col-lg-2 d-none d-lg-block  ">
+
+                    {{-- <img src="{{ asset('assect/image/hero_img.webp') }}" class="img-fluid hero-img" alt="Hero Image"> --}}
 
                 </div>
                 <!-- Form -->
                 <div class="col-lg-4">
-                    <div class="registration-form">
+                    <div class="registration-form form_sec">
                         <form>
-                            <h5 class="text-white text-center mb-4 fw-bold">Admission Enquiry</h5>
+                            <h2 class=" text-center fw-bold ">Admission Enquiry</h2>
+                            <h5>Get up to 50% scholarship*</h5>
 
                             <div class="form-group">
                                 <input type="text" class="form-control item" id="fullName" name="fullName"
-                                    placeholder="Enter your name" required>
+                                    placeholder="Full Name" required>
                             </div>
                             <div class="form-group">
                                 <input type="tel" class="form-control item" id="mobileNumber" name="mobileNumber"
-                                    placeholder="Enter mobile number" required>
+                                    placeholder="Mobile Number" required>
                             </div>
                             <div class="form-group">
                                 <input type="email" class="form-control item" id="emailId" name="emailId"
-                                    placeholder="Enter email address" required>
+                                    placeholder="Email ID" required>
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control item" id="pincode" name="pincode"
-                                    placeholder="Enter area pincode" required>
+                                    placeholder="Area Pincode" required>
                             </div>
 
-                            <div class="form-group d-flex justify-content-center align-items-center">
-                                <button type="button" class="btn btn-block create-account">Aply Now</button>
+                            <div class="form-group d-flex justify-content-center align-items-center flex-column">
+                                <button type="button" class="btn btn-block create-account w-75">Apply Now</button>
+                                <p style="font-size: 0.7rem;" class=" text-center mt-2" style="color:gray">By clicking
+                                    submit button you are agreeing to <a href="https://careerandcourses.com/legal/privacy-policy"> Privacy Policy</a></p>
                             </div>
                         </form>
                     </div>
@@ -60,19 +66,19 @@
         </div>
 
     </section>
-    <section class=" bg-white">
-        <div class="container ">
-            <div class="text-center ">
-                <h1 class="fw-bold text-primary ">Top WBCS Residential Coaching in Kolkata </h1>
+    <section class=" bg-color">
+        <div class="container mt-4 py-5">
+            <div class="text-center mb-3">
+                <h1 class="hero_title_01 ">Top WBCS Residential Coaching in Kolkata </h1>
             </div>
             <div>
-                <p class="font_size_about m-0">
+                <p class="font_size_about mb-3 fs-5 text-blance">
                     At Career & Courses, we believe that West Bengal deserves passionate and capable civil servants, and we
                     are here to help you become one. We are not just a coaching centre. We are a launchpad for serious WBCS
                     aspirants who are ready to transform their dreams into reality.
                 </p>
-                <p class=" font_size_about m-0 ">
-                    We admit <span class="fw-bold">only 30 serious students per batch</span> — because we believe true
+                <p class=" font_size_about m-0 fs-5 text-blance">
+                    We admit <span class="fw-bold">only 30 committed learners per batch </span> — because we believe true
                     mentorship requires time, attention, and accountability. Our Residential WBCS Coaching Centre in Kolkata
                     is built for one single purpose: To create a focused, distraction-free environment where aspirants are
                     trained, guided, and transformed into officers.
@@ -84,12 +90,12 @@
         </div>
     </section>
     <section class=" bg-white">
-        <div class="container ">
-            <div class="text-center ">
-                <h2 class="fw-bold text-primary">Why Choose Us for WBCS Coaching? </h2>
+        <div class="container mt-4 py-5">
+            <div class="text-center mb-3 ">
+                <h2 class="hero_title_01">Why Choose Us for WBCS Coaching? </h2>
             </div>
             <div>
-                <p class="font_size_about text-center">
+                <p class="font_size_about mb-3 fs-5 text-blance text-center">
                     At Career & Courses, we offer a structured residential ecosystem that shapes ordinary aspirants into
                     extraordinary officers.
                 </p>
@@ -97,65 +103,99 @@
             <div class="row g-4">
                 <div class="col-md-6 col-lg-4">
                     <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">12-Months Programme</h5>
-                            <p class="card-text">Residential Programme with complete guidance.</p>
+                        <div class="card-body d-flex">
+                            <div class="d-flex align-items-center mb-2 me-2">
+                                <i class="fa-solid fa-calendar-days icon"></i>
+                            </div>
+                            <div>
+                                <h5 class="card-title mb-0">12-Months Programme</h5>
+                                <p class="card-text">Residential Programme with complete guidance.</p>
+                            </div>
+
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4">
                     <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Experienced Faculty</h5>
-                            <p class="card-text">Learn from expert mentors and subject specialists.</p>
+                        <div class="card-body d-flex">
+                            <div class="d-flex align-items-center mb-2 me-2">
+                                <i class="fa-solid fa-chalkboard-user icon"></i>
+                            </div>
+                            <div>
+                                <h5 class="card-title">Experienced Faculty</h5>
+                                <p class="card-text">Learn from expert mentors and subject specialists.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4">
                     <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Mock Tests & Feedback</h5>
-                            <p class="card-text">Regular evaluation and feedback to track progress.</p>
+                        <div class="card-body d-flex">
+                            <div class="d-flex align-items-center mb-2 me-2">
+                                <i class="fa-solid fa-comments icon"></i>
+                            </div>
+                            <div>
+                                <h5 class="card-title">Mock Tests & Feedback</h5>
+                                <p class="card-text">Regular evaluation and feedback to track progress.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4">
                     <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Structured Routine</h5>
-                            <p class="card-text">Disciplined schedule designed for success.</p>
+                        <div class="card-body d-flex">
+                            <div class="d-flex align-items-center mb-2 me-2">
+                                <i class="fas fa-route icon"></i>
+                            </div>
+                            <div>
+                                <h5 class="card-title">Structured Routine</h5>
+                                <p class="card-text">Disciplined schedule designed for success.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4">
                     <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Language Focus</h5>
-                            <p class="card-text">Special focus on Bengali & English paper preparation.</p>
+                        <div class="card-body d-flex">
+                            <div class="d-flex align-items-center mb-2 me-2">
+
+                                <i class="fas fa-language icon"></i>
+                            </div>
+                            <div>
+
+                                <h5 class="card-title">Language Focus</h5>
+                                <p class="card-text">Special focus on Bengali & English paper preparation.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4">
                     <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Interview Training</h5>
-                            <p class="card-text">Dedicated training for personality development and interviews.</p>
+                        <div class="card-body d-flex">
+                            <div class="d-flex align-items-center mb-2 me-2">
+                                <i class="fas fa-graduation-cap icon"></i>
+                            </div>
+                            <div>
+                                <h5 class="card-title">Interview Training</h5>
+                                <p class="card-text">Dedicated training for personality development and interviews.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
             </div>
-            <div class="text-center my-5">
+            <div class="text-center pt-3 mt-3">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#enquiryModal">
-                    Aply Now
+                    Apply Now
                 </button>
             </div>
-            <div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+            <div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel"
+                aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
 
@@ -188,6 +228,7 @@
                                         placeholder="Enter area pincode" required>
                                 </div>
                                 <button type="submit" class="btn btn-primary w-100">Submit</button>
+                                
                             </form>
                         </div>
 
@@ -196,46 +237,66 @@
             </div>
         </div>
     </section>
-    <section class="bg-white ">
-        <div class="container ">
-            <div class="text-center ">
-                <h2 class="fw-bold text-primary">Safe & Disciplined Campus Life</h2>
+    <section class="bg-color ">
+        <div class="container mt-4 py-5 ">
+            <div class="text-center  mb-3">
+                <h2 class="hero_title_01"> Disciplined Campus Life</h2>
             </div>
             <div>
-                <p class=" text-center font_size_about">
+                <p class=" font_size_about mb-3 fs-5 text-blance text-center">
                     We don’t just teach — we train you to live like a future WBCS officer.
                 </p>
             </div>
             <div class="row g-4">
                 <div class="col-md-6 col-lg-3">
                     <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Safe & Secure</h5>
-                            <p class="card-text">Separate Hostels for Boys and Girls</p>
+                        <div class="card-body d-flex">
+                            <div class="d-flex align-items-center mb-2 me-2">
+                               <i class="fa-solid fa-hotel icon"></i>
+                            </div>
+                            <div>
+                                <h5 class="card-title">Safe & Secure</h5>
+                                <p class="card-text">Separate Hostels for Boys and Girls</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Health & Nutrition</h5>
-                            <p class="card-text">Nutritious Meals and Healthcare</p>
+                        <div class="card-body d-flex">
+                            <div class="d-flex align-items-center mb-2 me-2">
+                                <i class="fa-solid fa-utensils icon"></i>
+                            </div>
+                            <div>
+                                <h5 class="card-title">Health & Nutrition</h5>
+                                <p class="card-text">Nutritious Meals and Healthcare</p> 
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Balanced Lifestyle Support</h5>
-                            <p class="card-text">Regular Fitness & Meditation Sessions</p>
+                        <div class="card-body d-flex">
+                            <div class="d-flex align-items-center mb-2 me-2">
+                                <i class="fas fa-balance-scale icon"></i>
+                            </div>
+                            <div>
+                                <h5 class="card-title">Balanced Lifestyle Support</h5>
+                                <p class="card-text">Regular Fitness & Meditation Sessions</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Discipline</h5>
-                            <p class="card-text">Mobile Restriction During Study Hours</p>
+                        <div class="card-body d-flex">
+                            <div class="d-flex align-items-center mb-2 me-2">
+                                <i class="fas fa-ban icon"></i>
+                            </div>
+                            <div>
+                                <h5 class="card-title">Discipline</h5>
+                                <p class="card-text">Mobile Restriction During Study Hours</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -243,11 +304,11 @@
         </div>
     </section>
     <section class=" bg-white ">
-        <div class="container ">
-            <div class="text-center ">
-                <h2 class="fw-bold text-primary">Students & Parents Reviews</h2>
+        <div class="container mt-4 py-5">
+            <div class="text-center mb-3">
+                <h2 class="hero_title_01">Students & Parents Reviews</h2>
             </div>
-            <div class="row text-center">
+            <div class="row text-center mb-3">
                 <div class="col-md-3 mb-3 mb-md-0">
                     <div class="card">
                         <div class="card-body py-4 mt-2">
@@ -377,11 +438,11 @@
         </div>
 
     </section>
-    <section class=" bg-white ">
-        <div class="container ">
+    <section class=" bg-color">
+        <div class="container mt-4 py-5 ">
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <div class="text-center ">
+                    <div class="text-center  ">
                         <h2 class="fw-bold text-primary">FAQs</h2>
                     </div>
                     <div class="accordion" id="faqAccordion">
