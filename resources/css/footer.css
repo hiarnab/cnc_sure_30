@@ -1,4 +1,3 @@
-
 .deneb_footer .widget_wrapper {
     background-repeat: no-repeat;
     background-size: cover;
@@ -76,13 +75,26 @@
     color: #feb000;
     margin-right: 10px;
 }
-.deneb_footer .widget_wrapper .widget_contact .contact_info .single_info .info p a {
+.deneb_footer
+    .widget_wrapper
+    .widget_contact
+    .contact_info
+    .single_info
+    .info
+    p
+    a {
     color: #7a808d;
 }
-.deneb_footer .widget_wrapper .widget_contact .contact_info .single_info .info p span {
+.deneb_footer
+    .widget_wrapper
+    .widget_contact
+    .contact_info
+    .single_info
+    .info
+    p
+    span {
     display: block;
 }
-
 .deneb_footer .copyright_area {
     background: #edecf0;
     padding: 10px 0;
