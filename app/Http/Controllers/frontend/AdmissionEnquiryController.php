@@ -17,6 +17,7 @@ class AdmissionEnquiryController extends Controller
     }
     public function store(Request $request)
     {
+
         $validate = $request->validate([
             'name' => 'required',
             'phone'=> 'required|digits:10',

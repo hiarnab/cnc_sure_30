@@ -85,63 +85,8 @@
                     </p>
                     {{-- <p class="fw-bold text-danger">🏆 Limited Seats Available</p> --}}
 
-                    <button class="btn counselling_btn my-3 w-50 " data-bs-toggle="modal" data-bs-target="#enquiryModal01">
+                    <button class="btn counselling_btn my-3 w-50 " data-bs-toggle="modal" data-bs-target="#enquiryModal">
                         Free Counsselling</button>
-                    <div class="modal fade" id="enquiryModal01" tabindex="-1" aria-labelledby="enquiryModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-
-                                {{-- <div class="modal-header">
-                            <h5 class="modal-title fw-bold d-block" id="enquiryModalLabel">Admission Enquiry</h5>
-                            <h5 class="d-block">Get up to 50% scholarship*</h5>
-                            
-                        </div> --}}
-
-                                <div class="modal-body registration-form">
-                                    <form action="{{ route('admission.store') }}" method="POST">
-                                        @csrf
-                                        <button type="button" class="btn-close position-absolute top-0 end-0 m-3"
-                                            data-bs-dismiss="modal" aria-label="Close"></button>
-                                        <h2 class=" text-center fw-bold ">Admission Enquiry</h2>
-                                        <h5>Get up to 50% scholarship*</h5>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control item @error('name') is-invalid @enderror"  name="name" value="{{ old('name') }}"
-                                                placeholder="Full Name" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="tel" class="form-control item @error('phone') is-invalid @enderror" 
-                                                name="phone" value="{{ old('phone') }}" placeholder="Mobile Number" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="email" class="form-control item @error('email') is-invalid @enderror"  name="email" value="{{ old('email') }}"
-                                                placeholder="Email ID" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control item @error('pincode') is-invalid @enderror"  name="pincode" value="{{ old('pincode') }}"
-                                                placeholder="Area Pincode" required>
-                                        </div>
-
-                                        <div
-                                            class="form-group d-flex justify-content-center align-items-center flex-column">
-                                            <button type="submit" class="btn btn-block create-account w-75">Apply
-                                                Now</button>
-                                            <p style="font-size: 0.7rem;" class=" text-center mt-2" style="color:gray">By
-                                                clicking
-                                                submit button you are agreeing to <a
-                                                    href="https://careerandcourses.com/legal/privacy-policy"> Privacy
-                                                    Policy</a>
-                                            </p>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
-
-
                 </div>
                 <div class="col-lg-2 d-none d-lg-block  ">
 
@@ -151,39 +96,36 @@
                 <!-- Form -->
                 <div class="col-lg-4">
                     <div class="registration-form form_sec">
-                        <form action="{{ route('admission.store') }}" method="POST">
+                        <form action="{{ route('admission.store') }}" method="POST" id=form1>
                             @csrf
                             <h2 class=" text-center fw-bold ">Admission Enquiry</h2>
                             <h5>Get up to 50% scholarship*</h5>
 
                             <div class="form-group">
-                                <input type="text" class="form-control item @error('name') is-invalid @enderror"
-                                    id="fullName" name="name" placeholder="Full Name" value="{{ old('name') }}">
-                                @error('name')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
+                                <input type="text" class="form-control item " id="fullName1" name="name"
+                                    placeholder="Full Name" value="{{ old('name') }}">
+                                <div class="invalid-feedback" id="nameError"></div>
+
                             </div>
                             <div class="form-group">
-                                <input type="tel" class="form-control item @error('phone') is-invalid @enderror"
-                                    id="mobileNumber" name="phone" placeholder="Mobile Number"
-                                    value="{{ old('phone') }}">
-                                @error('phone')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
+                                <div class="input-group">
+                                <span class="input-group-text " id="inputGroupPrepend1"
+                                    style="border-top-left-radius: 20px; border-bottom-left-radius: 20px; height: 47px; background-color: #fff; border-right: none; border-color:#dee2e6;">+91</span>
+                                <input type="tel" class="form-control item  " id="mobileNumbe1" name="phone"
+                                    placeholder="Mobile Number" value="{{ old('phone') }}" style="border-left: none; padding-left: 0px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;">
+                                    <div class="invalid-feedback" id="phoneError"></div>
+                                </div>
+
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control item @error('email') is-invalid @enderror"
-                                    id="emailId" name="email" placeholder="Email ID" value="{{ old('email') }}">
-                                @error('email')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
+                                <input type="email" class="form-control item " id="emailId1" name="email"
+                                    placeholder="Email ID" value="{{ old('email') }}">
+                                <div class="invalid-feedback" id="emailError"></div>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control item @error('pincode') is-invalid @enderror"
-                                    id="pincode" name="pincode" placeholder="Area Pincode" value="{{ old('pincode') }}">
-                                @error('pincode')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
+                                <input type="text" class="form-control item " id="pincode1" name="pincode"
+                                    placeholder="Area Pincode" value="{{ old('pincode') }}">
+                                <div class="invalid-feedback" id="pincodeError"></div>
                             </div>
 
                             <div class="form-group d-flex justify-content-center align-items-center flex-column">
@@ -203,6 +145,9 @@
     <!-- scroll news logo start -->
     <section class="bg-white">
         <div class="container mt-4 pading_t_b">
+            <div class="text-center mb-3">
+                <h1 class="hero_title_01 ">We are featured on</h1>
+            </div>
             <div class="scroll">
                 {{-- <h2 class="tutor-course-segment__title" style="margin-left:75px;">We're featured on</h2> --}}
                 <div class="d-none d-lg-block d-md-block">
@@ -250,7 +195,8 @@
     </section>
     <!--scroll news logo end-->
     <!--top wbcs coaching (about) start-->
-    <section class=" bg-color" id="about">
+
+    <section class=" bg-color"id="about">
         <div class="container mt-4 pading_t_b">
             <div class="text-center mb-3">
                 <h1 class="hero_title_01 ">Top WBCS Residential Coaching in Kolkata </h1>
@@ -262,7 +208,7 @@
                     aspirants who are ready to transform their dreams into reality.
                 </p>
                 <p class=" font_size_about m-0 fs-5 text-blance">
-                    We admit <span class="fw-bold">only 30 committed learners per batch </span> — because we believe true
+                    We admit <span class="fw-bold">only 30 committed students per batch </span> — because we believe true
                     mentorship requires time, attention, and accountability. Our Residential WBCS Coaching Centre in Kolkata
                     is built for one single purpose: To create a focused, distraction-free environment where aspirants are
                     trained, guided, and transformed into officers.
@@ -273,6 +219,7 @@
             </div>
         </div>
     </section>
+
     <!--top wbcs coaching (about) end-->
     <!--why choose us start-->
     <section class=" bg-white" id="why">
@@ -380,56 +327,6 @@
                     Apply Now
                 </button>
 
-            </div>
-            <div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-
-                        {{-- <div class="modal-header">
-                            <h5 class="modal-title fw-bold d-block" id="enquiryModalLabel">Admission Enquiry</h5>
-                            <h5 class="d-block">Get up to 50% scholarship*</h5>
-                            
-                        </div> --}}
-
-
-                        <div class="modal-body registration-form">
-                            <form>
-                                <button type="button" class="btn-close position-absolute top-0 end-0 m-3"
-                                    data-bs-dismiss="modal" aria-label="Close"></button>
-                                <h2 class=" text-center fw-bold ">Admission Enquiry</h2>
-                                <h5>Get up to 50% scholarship*</h5>
-                                <div class="form-group">
-                                    <input type="text" class="form-control item" id="fullName" name="fullName"
-                                        placeholder="Full Name" required>
-                                </div>
-                                <div class="form-group">
-                                    <input type="tel" class="form-control item" id="mobileNumber"
-                                        name="mobileNumber" placeholder="Mobile Number" required>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control item" id="emailId" name="emailId"
-                                        placeholder="Email ID" required>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control item" id="pincode" name="pincode"
-                                        placeholder="Area Pincode" required>
-                                </div>
-
-                                <div class="form-group d-flex justify-content-center align-items-center flex-column">
-                                    <button type="button" class="btn btn-block create-account w-75">Apply Now</button>
-                                    <p style="font-size: 0.7rem;" class=" text-center mt-2" style="color:gray">By
-                                        clicking
-                                        submit button you are agreeing to <a
-                                            href="https://careerandcourses.com/legal/privacy-policy"> Privacy Policy</a>
-                                    </p>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-
-                </div>
             </div>
         </div>
     </section>
@@ -739,24 +636,223 @@
 
     </section>
     <!--faq end-->
+    <!-- modal start -->
+    <div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content model_content">
+                <div class="modal-body registration-form">
+                    <form action="{{ route('admission.store') }}" method="POST">
+                        @csrf
+                        <button type="button" class="btn-close position-absolute top-0 end-0 m-3"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h2 class=" text-center fw-bold ">Admission Enquiry</h2>
+                        <h5>Get up to 50% scholarship*</h5>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control item @error('name') is-invalid @enderror"
+                                id="fullName" name="name" placeholder="Full Name" value="{{ old('name') }}">
+                            @error('name')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-text @error('phone') is-invalid @enderror"
+                                    style="border-top-left-radius: 20px; border-bottom-left-radius: 20px; height: 46px; background-color: #fff; border-right: none;">+91</span>
+                                <input type="tel" class="form-control item @error('phone') is-invalid @enderror"
+                                    id="mobileNumber" name="phone" placeholder="Mobile Number"
+                                    value="{{ old('phone') }}" style="border-left: none; padding-left: 0px;">
+                            </div>
+                            @error('phone')
+                                <div class="invalid-feedback d-block">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control item @error('email') is-invalid @enderror"
+                                id="emailId" name="email" placeholder="Email ID" value="{{ old('email') }}">
+                            @error('email')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control item @error('pincode') is-invalid @enderror"
+                                id="pincode" name="pincode" placeholder="Area Pincode" value="{{ old('pincode') }}">
+                            @error('pincode')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group d-flex justify-content-center align-items-center flex-column">
+                            <button type="submit" class="btn btn-block create-account w-75">Apply Now</button>
+                            <p style="font-size: 0.7rem;" class=" text-center mt-2" style="color:gray">By clicking
+                                submit button you are agreeing to <a
+                                    href="https://careerandcourses.com/legal/privacy-policy"> Privacy Policy</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    {{-- <div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true"  data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content model_content">
+                <div class="modal-body registration-form">
+                    <form action="{{ route('admission.store') }}" method="POST" id="form2">
+                        @csrf
+                        <button type="button" class="btn-close position-absolute top-0 end-0 m-3"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h2 class=" text-center fw-bold ">Admission Enquiry</h2>
+                        <h5>Get up to 50% scholarship*</h5>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control item " id="fullName2" name="name"
+                                placeholder="Full Name" value="{{ old('name') }}">
+                            <div class="invalid-feedback" id="nameError2"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control item " id="mobileNumber2" name="phone"
+                                placeholder="Mobile Number" value="{{ old('phone') }}">
+                            <div class="invalid-feedback" id="phoneError2"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control item" id="emailId2" name="email"
+                                placeholder="Email ID" value="{{ old('email') }}">
+                            <div class="invalid-feedback" id="emailErro2"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control item " id="pincode2" name="pincode"
+                                placeholder="Area Pincode" value="{{ old('pincode') }}">
+                            <div class="invalid-feedback" id="pincodeError2"></div>
+                        </div>
+
+                        <div class="form-group d-flex justify-content-center align-items-center flex-column">
+                            <button type="submit" class="btn btn-block create-account w-75">Apply Now</button>
+                            <p style="font-size: 0.7rem;" class=" text-center mt-2" style="color:gray">By clicking
+                                submit button you are agreeing to <a
+                                    href="https://careerandcourses.com/legal/privacy-policy"> Privacy Policy</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div> --}}
+    <!-- modal end -->
 @endsection
 
 @push('scripts')
     <script>
-        window.addEventListener('load', function() {
-            const hash = window.location.hash;
-            if (hash && document.querySelector(hash)) {
-                setTimeout(() => {
-                    const target = document.querySelector(hash);
-                    const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 80;
-                    const offset = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+        document.getElementById('form1').addEventListener('submit', function(e) {
+          
+            let isValid = true;
 
-                    window.scrollTo({
-                        top: offset,
-                        behavior: 'smooth'
-                    });
-                }, 400); // delay ensures everything is rendered
+            // Clear previous errors & styles
+            ['name', 'phone', 'email', 'pincode'].forEach(function(field) {
+                document.getElementById(field + 'Error').innerText = '';
+                document.getElementById(field === 'name' ? 'fullName1' : (field === 'phone' ?
+                    'mobileNumbe1' : (field === 'email' ? 'emailId1' : 'pincode1'))).classList.remove(
+                    'is-invalid');
+            });
+
+            // Validate Name (required, min 3 chars)
+            let name = document.getElementById('fullName1').value.trim();
+            if (name.length < 3) {
+                document.getElementById('nameError').innerText = 'Please enter a valid name (min 3 characters).';
+                document.getElementById('fullName1').classList.add('is-invalid');
+                
+
+                isValid = false;
             }
+
+            // Validate Phone (required, digits only, length 10)
+            let phone = document.getElementById('mobileNumbe1').value.trim();
+            // let span = document.getElementsByClassName('text1');
+            let phonePattern = /^[0-9]{10}$/;
+            if (!phonePattern.test(phone)) {
+                document.getElementById('mobileNumbe1').classList.add('is-invalid');
+                document.getElementById('inputGroupPrepend1').style.borderColor = '#dc3545';
+                document.getElementById('inputGroupPrepend1').style.height= '46px';
+                document.getElementById('phoneError').innerText = 'Please enter a valid 10-digit mobile number.';
+                isValid = false;
+            }
+
+            // Validate Email (required, valid format)
+            let email = document.getElementById('emailId1').value.trim();
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById('emailError').innerText = 'Please enter a valid email address.';
+                document.getElementById('emailId1').classList.add('is-invalid');
+                isValid = false;
+            }
+
+            // Validate Pincode (optional, but if entered must be 6 digits)
+            let pincode = document.getElementById('pincode1').value.trim();
+            if (pincode.length == 0 || !/^[0-9]{6}$/.test(pincode)) {
+                document.getElementById('pincodeError').innerText = 'Please enter a valid 6-digit pincode.';
+                document.getElementById('pincode1').classList.add('is-invalid');
+                isValid = false;
+            }
+
+            if (!isValid) {
+                e.preventDefault(); // Prevent form submission if invalid
+            }
+
         });
     </script>
+    {{-- <script>
+        document.getElementById('form2').addEventListener('submit', function(e) {
+           
+            let isValid = true;
+
+            // Clear previous errors & styles
+            ['name', 'phone', 'email', 'pincode'].forEach(function(field) {
+                document.getElementById(field + 'Error').innerText = '';
+                document.getElementById(field === 'name' ? 'fullName2' : (field === 'phone' ?
+                    'mobileNumbe2' : (field === 'email' ? 'emailId2' : 'pincode2'))).classList.remove(
+                    'is-invalid');
+            });
+
+            // Validate Name (required, min 3 chars)
+            let name = document.getElementById('fullName2').value.trim();
+            if (name.length < 3) {
+                document.getElementById('nameError2').innerText = 'Please enter a valid name (min 3 characters).';
+                document.getElementById('fullName2').classList.add('is-invalid');
+                isValid = false;
+            }
+
+            // Validate Phone (required, digits only, length 10)
+            let phone = document.getElementById('mobileNumbe2').value.trim();
+            let phonePattern = /^[0-9]{10}$/;
+            if (!phonePattern.test(phone)) {
+                document.getElementById('phoneError2').innerText = 'Please enter a valid 10-digit mobile number.';
+                document.getElementById('mobileNumbe2').classList.add('is-invalid');
+                isValid = false;
+            }
+
+            // Validate Email (required, valid format)
+            let email = document.getElementById('emailId2').value.trim();
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById('emailError2').innerText = 'Please enter a valid email address.';
+                document.getElementById('emailId2').classList.add('is-invalid');
+                isValid = false;
+            }
+
+            // Validate Pincode (optional, but if entered must be 6 digits)
+            let pincode = document.getElementById('pincode2').value.trim();
+            if (pincode.length == 0 || !/^[0-9]{6}$/.test(pincode)) {
+                document.getElementById('pincodeError2').innerText = 'Please enter a valid 6-digit pincode.';
+                document.getElementById('pincode2').classList.add('is-invalid');
+                isValid = false;
+            }
+
+            if (!isValid) {
+                e.preventDefault(); // Prevent form submission if invalid
+            }
+
+        });
+    </script> --}}
 @endpush
