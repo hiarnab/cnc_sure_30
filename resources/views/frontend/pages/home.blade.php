@@ -60,6 +60,17 @@
     {{-- <link rel="stylesheet" href="{{ asset('resourcescss/home.css') }}"> --}}
     @vite(['resources/css/home.css'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .form-control:focus {
+           
+       
+            border-color: #dee2e6;
+            outline: 0;
+            box-shadow: none;
+        }
+       
+
+    </style>
 @endpush
 
 @section('content')
@@ -85,7 +96,7 @@
                     </p>
                     {{-- <p class="fw-bold text-danger">🏆 Limited Seats Available</p> --}}
 
-                    <button class="btn counselling_btn my-3 w-50 " data-bs-toggle="modal" data-bs-target="#enquiryModal">
+                    <button class="btn counselling_btn my-3 fr_cun_btn " data-bs-toggle="modal" data-bs-target="#enquiryModal">
                         Free Counsselling</button>
                 </div>
                 <div class="col-lg-2 d-none d-lg-block  ">
@@ -109,10 +120,11 @@
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
-                                <span class="input-group-text " id="inputGroupPrepend1"
-                                    style="border-top-left-radius: 20px; border-bottom-left-radius: 20px; height: 47px; background-color: #fff; border-right: none; border-color:#dee2e6;">+91</span>
-                                <input type="tel" class="form-control item  " id="mobileNumbe1" name="phone"
-                                    placeholder="Mobile Number" value="{{ old('phone') }}" style="border-left: none; padding-left: 0px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;">
+                                    <span class="input-group-text " id="inputGroupPrepend1"
+                                        style="border-top-left-radius: 20px; border-bottom-left-radius: 20px; height: 47px; background-color: #fff; border-right: none; border-color:#dee2e6;">+91</span>
+                                    <input type="tel" class="form-control item  " id="mobileNumbe1" name="phone"
+                                        placeholder="Mobile Number" value="{{ old('phone') }}"
+                                        style="border-left: none; padding-left: 0px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;">
                                     <div class="invalid-feedback" id="phoneError"></div>
                                 </div>
 
@@ -637,7 +649,7 @@
     </section>
     <!--faq end-->
     <!-- modal start -->
-    <div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+    {{-- <div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content model_content">
                 <div class="modal-body registration-form">
@@ -694,7 +706,7 @@
 
 
         </div>
-    </div>
+    </div> --}}
     {{-- <div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true"  data-bs-backdrop="static" data-bs-keyboard="false">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content model_content">
@@ -740,13 +752,65 @@
 
         </div>
     </div> --}}
+    <div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content model_content">
+                <div class="modal-body registration-form">
+                    <form id="enquiryForm" method="POST">
+                        @csrf
+                        <button type="button" class="btn-close position-absolute top-0 end-0 m-3"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h2 class="text-center fw-bold">Admission Enquiry</h2>
+                        <h5>Get up to 50% scholarship*</h5>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control item" id="fullName" name="name"
+                                placeholder="Full Name">
+                            <div class="invalid-feedback d-block" id="error-name"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-text "id="inputGroupPrepend2"
+                                    style="border-top-left-radius: 20px; border-bottom-left-radius: 20px; height: 46px; background-color: #fff; border-right: none;">+91</span>
+                                <input type="tel" class="form-control item" id="mobileNumber" name="phone"
+                                    placeholder="Mobile Number" style="border-left: none; padding-left: 0px;">
+                            </div>
+                            <div class="invalid-feedback d-block" id="error-phone"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" class="form-control item" id="emailId" name="email"
+                                placeholder="Email ID">
+                            <div class="invalid-feedback d-block" id="error-email"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control item" id="pincode" name="pincode"
+                                placeholder="Area Pincode">
+                            <div class="invalid-feedback d-block" id="error-pincode"></div>
+                        </div>
+
+                        <div class="form-group d-flex justify-content-center align-items-center flex-column">
+                            <button type="submit" class="btn btn-block create-account w-75">Apply Now</button>
+                            <p class="text-center mt-2" style="font-size: 0.7rem;">By clicking submit button you are
+                                agreeing to
+                                <a href="https://careerandcourses.com/legal/privacy-policy">Privacy Policy</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- modal end -->
 @endsection
 
 @push('scripts')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         document.getElementById('form1').addEventListener('submit', function(e) {
-          
+
             let isValid = true;
 
             // Clear previous errors & styles
@@ -762,7 +826,7 @@
             if (name.length < 3) {
                 document.getElementById('nameError').innerText = 'Please enter a valid name (min 3 characters).';
                 document.getElementById('fullName1').classList.add('is-invalid');
-                
+
 
                 isValid = false;
             }
@@ -774,7 +838,7 @@
             if (!phonePattern.test(phone)) {
                 document.getElementById('mobileNumbe1').classList.add('is-invalid');
                 document.getElementById('inputGroupPrepend1').style.borderColor = '#dc3545';
-                document.getElementById('inputGroupPrepend1').style.height= '46px';
+                document.getElementById('inputGroupPrepend1').style.height = '46px';
                 document.getElementById('phoneError').innerText = 'Please enter a valid 10-digit mobile number.';
                 isValid = false;
             }
@@ -855,4 +919,38 @@
 
         });
     </script> --}}
+    <script>
+        $('#enquiryForm').on('submit', function(e) {
+            e.preventDefault();
+
+            let form = $(this);
+            let formData = form.serialize();
+
+            // Clear previous errors
+            $('.invalid-feedback').text('');
+            $('.form-control').removeClass('is-invalid');
+            $('#inputGroupPrepend2').css('border-color', 'red');
+
+            $.ajax({
+                url: "{{ route('admission.store') }}",
+                type: 'POST',
+                data: formData,
+                success: function(response) {
+                    // alert('Form submitted successfully!');
+                    $('#enquiryModal').modal('hide');
+                    $('#enquiryForm')[0].reset();
+                },
+                error: function(xhr) {
+                    if (xhr.status === 422) {
+                        let errors = xhr.responseJSON.errors;
+                        $.each(errors, function(key, value) {
+                            $('#error-' + key).text(value[0]);
+                            $('[name="' + key + '"]').addClass('is-invalid');
+                        });
+                    }
+                }
+            });
+        });
+       
+    </script>
 @endpush

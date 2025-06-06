@@ -122,10 +122,22 @@ section {
     margin-bottom: 25px;
     padding: 10px 20px;
 }
-.registration-form .item :focus{
-	border-color: unset;
-    box-shadow: unset;
-}
+/* .registration-form .item :focus{
+	border-color:none;
+    box-shadow: none;
+} */
+  .fr_cun_btn{
+            width: 50%;
+        }
+        .fr_cun_btn:hover{
+            background-color: #ffc000;
+           
+        }
+        .fr_cun_btn:active {
+            background-color: #e6b800;
+        }
+
+
 
 .registration-form .create-account{
     border-radius: 30px;
@@ -290,6 +302,9 @@ section {
     .button_size{
         width: 50%;
     }
+     .fr_cun_btn{
+            width: 60%;
+        }
 }
 
 
