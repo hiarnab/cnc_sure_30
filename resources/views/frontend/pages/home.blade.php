@@ -156,7 +156,7 @@
     <!--hero section end-->
     <!-- scroll news logo start -->
     <section class="bg-white">
-        <div class="container mt-4 pading_t_b">
+        <div class="container mt-4 ">
             {{-- <div class="text-center mb-3">
                 <h1 class="hero_title_01 ">We are featured on</h1>
             </div> --}}
