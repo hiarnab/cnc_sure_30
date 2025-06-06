@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -10,30 +11,30 @@ use App\Http\Controllers\admin\LoginController;
 use App\Http\Controllers\frontend\AdmissionEnquiryController;
 
 Route::get('/', function () {
-    return view('frontend.pages.home');
+    return view('pages.home');
 })->name('home');
 
 
-Route::middleware('admin')->group(function(){
+Route::middleware('admin')->group(function () {
 
-Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-// admission enquiry
-Route::get('/admission-enquiry',[AdmissionEnquiryController::class,'index'])->name('list.admission');
-// admission enquiry
+    // admission enquiry
+    Route::get('/admission-enquiry', [AdmissionEnquiryController::class, 'index'])->name('list.admission');
+    // admission enquiry
 
 });
 
 
 // frontend
 // admission enquiry
-Route::post('/admission-enquiry/submit',[AdmissionEnquiryController::class, 'store'])->name('admission.store');
+Route::post('/admission-enquiry/submit', [AdmissionEnquiryController::class, 'store'])->name('admission.store');
 // admission enquiry
 // frontend
 
 // login
-Route::get('/login',[LoginController::class,'login'])->name('login');
-Route::post('/login-submit',[LoginController::class,'loggedIn'])->name('login.submit');
-Route::post('/logout',[LoginController::class,'logout'])->name('logout');
+Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/login-submit', [LoginController::class, 'loggedIn'])->name('login.submit');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // login
