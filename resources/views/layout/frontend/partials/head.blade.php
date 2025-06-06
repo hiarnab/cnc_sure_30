@@ -22,7 +22,7 @@
         <link rel="preconnect" href="https://fonts.bunny.net" />
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
 
-        {{-- ─── VITE ASSETS FOR FRONTEND ─────────────────────────────────────── --}}
+
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
             @vite(['resources/css/frontend.css', 'resources/js/frontend.js'])
         @else
@@ -35,10 +35,13 @@
             @foreach ($assets as $asset)
                 @php $filePath = asset('build/' . $asset); @endphp
 
+
                 @if (str_ends_with($asset, '.css') && str_starts_with($asset, 'assets/frontend-'))
                     <link rel="stylesheet" href="{{ $filePath }}" />
-                @elseif ((str_ends_with($asset, '.js') || str_ends_with($asset, '.vue')) && str_starts_with($asset, 'assets/frontend-'))
-                    <script src="{{ $filePath }}" defer></script>
+                @elseif (str_ends_with($asset, '.js') && str_starts_with($asset, 'assets/frontend-'))
+                    <script type="module" src="{{ $filePath }}"></script>
+                @elseif (str_ends_with($asset, '.vue') && str_starts_with($asset, 'assets/frontend-'))
+                    <script type="module" src="{{ $filePath }}"></script>
                 @endif
             @endforeach
         @endif
