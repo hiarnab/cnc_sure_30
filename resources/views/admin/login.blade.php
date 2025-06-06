@@ -13,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Sign in - Tabler - Premium and Open Source dashboard template with responsive and high quality UI.</title>
+      <link rel="icon" type="image/x-icon" href="/assets/image/CNC_LOGO.webp">
     <!-- CSS files -->
     <link href="{{asset('assets/css/tabler.min.css?1692870487')}}" rel="stylesheet"/>
     <link href="{{asset('assets/css/tabler-flags.min.css?1692870487')}}" rel="stylesheet"/>
