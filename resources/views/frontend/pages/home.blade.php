@@ -157,9 +157,9 @@
     <!-- scroll news logo start -->
     <section class="bg-white">
         <div class="container mt-4 pading_t_b">
-            <div class="text-center mb-3">
+            {{-- <div class="text-center mb-3">
                 <h1 class="hero_title_01 ">We are featured on</h1>
-            </div>
+            </div> --}}
             <div class="scroll">
                 {{-- <h2 class="tutor-course-segment__title" style="margin-left:75px;">We're featured on</h2> --}}
                 <div class="d-none d-lg-block d-md-block">
